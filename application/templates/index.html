@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professor Insights Chat Bot</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.10.4/dist/gsap.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wave {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: none;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .wave path {
+      fill: none;
+      stroke: url(#gradient);
+      stroke-width: 2;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+
+    h1 {
+      background: linear-gradient(to right, #6366f1, #3b82f6);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .scroll-hidden::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scroll-hidden {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
+
+  <div id="wave-container"></div>
+
+  <div class="z-10 text-center mb-8">
+    <h1 class="text-4xl font-bold mb-2">Professor Insights</h1>
+    <p class="text-lg">Get a glimpse of your professors through their reviews.</p>
+  </div>
+
+  <div class="z-10 bg-white shadow-lg rounded-lg w-80 p-4 flex flex-col space-y-4 text-gray-900">
+    <div id="chat-box" class="flex flex-col space-y-2 h-64 overflow-y-auto p-2 scroll-hidden">
+      <div class="self-start bg-blue-100 text-blue-700 p-2 rounded-md">Hello! How can I assist you?</div>
+      {% for message in messages %}
+        <div class="{{ 'self-end bg-gray-200 text-gray-700' if message.sender == 'user' else 'self-start bg-blue-100 text-blue-700' }} p-2 rounded-md w-fit max-w-xs break-words">
+          {{ message.text }}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="flex items-center space-x-2">
+      <input id="user-input" type="text" placeholder="Ask me something..." class="flex-1 p-2 border rounded-md outline-none">
+      <button id="send-btn" class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition-all">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const waveContainer = document.getElementById('wave-container');
+
+    function createWaves() {
+      for (let i = 0; i < 10; i++) {
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.classList.add('wave');
+        svg.setAttribute('viewBox', '0 0 1440 320');
+
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute('d', generateSpreadingWavePath(i));
+        svg.appendChild(path);
+        waveContainer.appendChild(svg);
+
+        gsap.to(path, {
+          duration: 15 + Math.random() * 5,
+          attr: { d: generateAnimatingWavePath(i) },
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          delay: i * 0.5
+        });
+      }
+    }
+
+    function generateSpreadingWavePath(index) {
+      const yOffset = index * 30;
+      const startX = 0;
+      const startY = yOffset;
+      const endX = 1440;
+      const endY = yOffset + 20;
+      const controlX = 190;
+      const controlY = yOffset - 60;
+
+      return `M${startX},${startY} Q${controlX},${controlY} ${startX + 360},${startY} T${endX},${endY}`;
+    }
+
+    function generateAnimatingWavePath(index) {
+      const yOffset = 100;
+      const startX = 0;
+      const startY = yOffset;
+      const endX = 1440;
+      const endY = 0;
+      const controlX1 = 180 + Math.random() * 60;
+      const controlY1 = yOffset - 400;
+      const controlX2 = 360 + Math.random() * 60;
+      const controlY2 = yOffset + 1000;
+
+      return `M${startX},${startY} Q${controlX1},${controlY1} ${controlX2},${startY} T${endX},${endY}`;
+    }
+
+    createWaves();
+
+    const chatBox = document.getElementById('chat-box');
+    const userInput = document.getElementById('user-input');
+    const sendBtn = document.getElementById('send-btn');
+
+    sendBtn.addEventListener('click', () => {
+      const query = userInput.value.trim();
+      if (query) {
+        fetch('/send_message', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ message: query })
+        }).then(response => response.json()).then(data => {
+          addMessage(query, 'user');
+          addMessage(data.response, 'bot');
+        });
+        userInput.value = '';
+      }
+    });
+
+    function addMessage(message, sender) {
+      const messageDiv = document.createElement('div');
+      messageDiv.textContent = message;
+      messageDiv.classList.add('p-2', 'rounded-md', 'w-fit', 'max-w-xs', 'break-words');
+      messageDiv.classList.add(sender === 'user' ? 'self-end' : 'self-start');
+      messageDiv.classList.add(sender === 'user' ? 'bg-gray-200' : 'bg-blue-100', sender === 'user' ? 'text-gray-700' : 'text-blue-700');
+
+      chatBox.appendChild(messageDiv);
+      gsap.from(messageDiv, { opacity: 0, y: 20, duration: 0.5 });
+
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    userInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        sendBtn.click();
+      }
+    });
+  </script>
+
+  <svg width="0" height="0">
+    <defs>
+      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color: #6366f1; stop-opacity: 1;" />
+        <stop offset="100%" style="stop-color: #3b82f6; stop-opacity: 1;" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+</body>
+</html>

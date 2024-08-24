@@ -1,0 +1,244 @@
+{
+  "reviews": [
+    {
+      "professor": "Dr. Sarah Johnson",
+      "subject": "Biology",
+      "stars": 4,
+      "reviews": "Engaging lectures and well-organized course material. Tough grader but fair."
+    },
+    {
+      "professor": "Prof. Michael Chen",
+      "subject": "Computer Science",
+      "stars": 5,
+      "reviews": "Excellent teacher who explains complex concepts clearly. Always available for office hours."
+    },
+    {
+      "professor": "Dr. Emily Rodriguez",
+      "subject": "Psychology",
+      "stars": 3,
+      "reviews": "Interesting subject matter, but assignments can be vague. Lectures sometimes feel disorganized."
+    },
+    {
+      "professor": "Prof. David Thompson",
+      "subject": "History",
+      "stars": 4,
+      "reviews": "Passionate about the subject and brings historical events to life. Heavy reading load."
+    },
+    {
+      "professor": "Dr. Lisa Patel",
+      "subject": "Chemistry",
+      "stars": 5,
+      "reviews": "Brilliant instructor who makes difficult concepts understandable. Challenging but rewarding course."
+    },
+    {
+      "professor": "Prof. Robert Wilson",
+      "subject": "English Literature",
+      "stars": 4,
+      "reviews": "Insightful analysis of texts and encourages critical thinking. Some find the workload excessive."
+    },
+    {
+      "professor": "Dr. Jennifer Lee",
+      "subject": "Economics",
+      "stars": 3,
+      "reviews": "Knowledgeable about the subject but can be intimidating in class. Exams are particularly difficult."
+    },
+    {
+      "professor": "Prof. Thomas Brown",
+      "subject": "Physics",
+      "stars": 4,
+      "reviews": "Clear explanations and helpful problem-solving sessions. Course is challenging but well-structured."
+    },
+    {
+      "professor": "Dr. Maria Garcia",
+      "subject": "Sociology",
+      "stars": 5,
+      "reviews": "Thought-provoking discussions and relevant real-world examples. Approachable and supportive."
+    },
+    {
+      "professor": "Prof. James Anderson",
+      "subject": "Mathematics",
+      "stars": 2,
+      "reviews": "Moves too quickly through material. Often seems frustrated when students ask questions."
+    },
+    {
+      "professor": "Dr. Elizabeth Taylor",
+      "subject": "Art History",
+      "stars": 4,
+      "reviews": "Passionate about art and culture. Assignments are creative but time-consuming."
+    },
+    {
+      "professor": "Prof. William Baker",
+      "subject": "Political Science",
+      "stars": 3,
+      "reviews": "Knowledgeable but lectures can be dry. Good insights during class discussions."
+    },
+    {
+      "professor": "Dr. Rachel Green",
+      "subject": "Environmental Science",
+      "stars": 5,
+      "reviews": "Inspiring teacher who makes you care about environmental issues. Great field trip opportunities."
+    },
+    {
+      "professor": "Prof. Daniel Kim",
+      "subject": "Marketing",
+      "stars": 4,
+      "reviews": "Brings real-world experience to the classroom. Group projects are challenging but valuable."
+    },
+    {
+      "professor": "Dr. Olivia Martinez",
+      "subject": "Neuroscience",
+      "stars": 5,
+      "reviews": "Brilliant researcher and engaging lecturer. Difficult course but extremely rewarding."
+    },
+    {
+      "professor": "Prof. Christopher Lee",
+      "subject": "Philosophy",
+      "stars": 3,
+      "reviews": "Interesting topics but can be abstract. Sometimes struggles to explain complex ideas clearly."
+    },
+    {
+      "professor": "Dr. Sophia Nguyen",
+      "subject": "Genetics",
+      "stars": 4,
+      "reviews": "Very knowledgeable and helpful during office hours. Exams are challenging but fair."
+    },
+    {
+      "professor": "Prof. Jonathan White",
+      "subject": "Film Studies",
+      "stars": 5,
+      "reviews": "Passionate about cinema and encourages creative thinking. Interesting project assignments."
+    },
+    {
+      "professor": "Dr. Amanda Johnson",
+      "subject": "Anthropology",
+      "stars": 4,
+      "reviews": "Fascinating lectures with lots of real-world examples. Heavy reading load but worth it."
+    },
+    {
+      "professor": "Prof. Richard Davis",
+      "subject": "Business Ethics",
+      "stars": 2,
+      "reviews": "Seems disinterested in teaching. Lectures are mostly reading off slides."
+    },
+    {
+      "professor": "Dr. Laura Wilson",
+      "subject": "Astronomy",
+      "stars": 5,
+      "reviews": "Makes complex concepts accessible and exciting. Great use of visual aids in lectures."
+    },
+    {
+      "professor": "Prof. Mark Thompson",
+      "subject": "Statistics",
+      "stars": 3,
+      "reviews": "Explains concepts well but assignments can be unclear. Grading is sometimes inconsistent."
+    },
+    {
+      "professor": "Dr. Samantha Brown",
+      "subject": "Linguistics",
+      "stars": 4,
+      "reviews": "Engaging lecturer who encourages class participation. Assignments are challenging but interesting."
+    },
+    {
+      "professor": "Prof. Andrew Chen",
+      "subject": "Electrical Engineering",
+      "stars": 4,
+      "reviews": "Highly knowledgeable and practical approach to teaching. Lab sessions are particularly useful."
+    },
+    {
+      "professor": "Dr. Jessica Taylor",
+      "subject": "Psychology",
+      "stars": 5,
+      "reviews": "Inspirational teacher who genuinely cares about student learning. Fascinating research opportunities."
+    },
+    {
+      "professor": "Prof. Michael O'Brien",
+      "subject": "Irish Literature",
+      "stars": 4,
+      "reviews": "Passionate about the subject and provides insightful analysis. Heavy reading load but enjoyable."
+    },
+    {
+      "professor": "Dr. Karen Wong",
+      "subject": "Biochemistry",
+      "stars": 3,
+      "reviews": "Very knowledgeable but lectures can be hard to follow. Office hours are helpful."
+    },
+    {
+      "professor": "Prof. Steven Clark",
+      "subject": "Architecture",
+      "stars": 5,
+      "reviews": "Inspiring teacher with practical industry experience. Projects are challenging and rewarding."
+    },
+    {
+      "professor": "Dr. Michelle Rodriguez",
+      "subject": "Public Health",
+      "stars": 4,
+      "reviews": "Engaging lectures with relevant case studies. Assignments promote critical thinking."
+    },
+    {
+      "professor": "Prof. Brian Murphy",
+      "subject": "Music Theory",
+      "stars": 3,
+      "reviews": "Knowledgeable but can be intimidating. Course is challenging for those without strong music background."
+    },
+    {
+      "professor": "Dr. Ava Patel",
+      "subject": "Organic Chemistry",
+      "stars": 4,
+      "reviews": "Clear explanations of complex topics. Lab sessions are well-organized and informative."
+    },
+    {
+      "professor": "Prof. Timothy Green",
+      "subject": "Environmental Law",
+      "stars": 5,
+      "reviews": "Passionate about the subject and encourages critical thinking. Assignments are practical and relevant."
+    },
+    {
+      "professor": "Dr. Natalie Kim",
+      "subject": "Cognitive Science",
+      "stars": 4,
+      "reviews": "Interesting interdisciplinary approach. Lectures can be dense but rewarding."
+    },
+    {
+      "professor": "Prof. Alexander Ross",
+      "subject": "International Relations",
+      "stars": 3,
+      "reviews": "Knowledgeable but sometimes biased in presentations. Good class discussions."
+    },
+    {
+      "professor": "Dr. Victoria Chang",
+      "subject": "Microbiology",
+      "stars": 5,
+      "reviews": "Excellent teacher who makes complex concepts understandable. Lab work is particularly engaging."
+    },
+    {
+      "professor": "Prof. Eric Sanderson",
+      "subject": "Urban Planning",
+      "stars": 4,
+      "reviews": "Brings real-world experience to the classroom. Group projects are challenging but valuable."
+    },
+    {
+      "professor": "Dr. Rebecca Martinez",
+      "subject": "Women's Studies",
+      "stars": 5,
+      "reviews": "Thought-provoking lectures and discussions. Encourages critical analysis of societal norms."
+    },
+    {
+      "professor": "Prof. Gregory Wilson",
+      "subject": "Mechanical Engineering",
+      "stars": 3,
+      "reviews": "Knowledgeable but can be difficult to understand. Office hours are very helpful."
+    },
+    {
+      "professor": "Dr. Melissa Thompson",
+      "subject": "Developmental Psychology",
+      "stars": 4,
+      "reviews": "Engaging lecturer with interesting research. Assignments promote practical application of concepts."
+    },
+    {
+      "professor": "Prof. Justin Lee",
+      "subject": "Graphic Design",
+      "stars": 5,
+      "reviews": "Inspiring teacher who pushes students to be creative. Projects are challenging but rewarding."
+    }
+  ]
+}
